@@ -1,0 +1,27 @@
+{
+  "hikari_token": {
+    "type": "string",
+    "description": "yuyuko API Token",
+    "hint": "格式为 APIKey:Token，向 yuyuko 申请。未填写时插件不会执行查询。",
+    "obvious_hint": true,
+    "default": ""
+  },
+  "default_server": {
+    "type": "string",
+    "description": "默认服务器",
+    "hint": "自然语言查询和省略服务器的 /wws bind 使用的服务器。",
+    "options": ["亚服", "欧服", "美服", "俄服", "国服"],
+    "default": "亚服"
+  },
+  "query_timeout": {
+    "type": "int",
+    "description": "单次查询超时（秒）",
+    "hint": "首次查询需要下载渲染用的浏览器，可能较慢。",
+    "default": 90
+  },
+  "selection_timeout": {
+    "type": "int",
+    "description": "等待回复选项序号的时间（秒）",
+    "default": 120
+  }
+}

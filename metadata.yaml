@@ -1,0 +1,11 @@
+name: astrbot_plugin_wows
+display_name: 战舰世界战绩查询
+desc: 基于 Hikari-core v2 / yuyuko API，支持总战绩、近期战绩、单船查询、账号绑定及自然语言查询，并以图片返回结果。需要自行配置 yuyuko API Token。
+version: v0.3.0
+author: tianqixu
+repo: https://github.com/VioL1n/astrbot_plugin_wows
+tags:
+  - 战舰世界
+  - WoWS
+  - 游戏
+  - 战绩查询

@@ -1,0 +1,2 @@
+hikari-core @ git+https://github.com/wows-yuyuko/Hikari-core-v2.git@9ae181785e050ea1a4c15d5c4816f77031ce86d7
+playwright==1.63.0
