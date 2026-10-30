@@ -19,7 +19,7 @@ from astrbot.api.event import AstrMessageEvent, MessageChain, filter
 from astrbot.api.star import Context, Star, StarTools, register
 
 PLUGIN_NAME = "astrbot_plugin_wows"
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 
 BOUND_ACCOUNT_HINT = "此查询需要你的默认账号。请先发送：/wws bind 游戏昵称"
 MISSING_TOKEN_HINT = "插件未配置 yuyuko API Token，请管理员在 AstrBot 插件配置中填写。"
