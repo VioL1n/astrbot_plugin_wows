@@ -13,7 +13,6 @@ from pathlib import Path
 
 import httpx
 
-from . import log_patch
 from .bindings import UserBinding, UserBindingStore
 
 # Hikari only knows QQ-style platform codes. QQ official bots expose openids
@@ -38,13 +37,12 @@ class HikariEngine:
             check_version,
         )
 
-        # Hikari logs its entire configuration, including the API token. AstrBot
-        # shares the same loguru logger, so redact with a global patcher instead
-        # of replacing sinks the way the standalone bot did.
-        log_patch.install(token)
+        # Hikari owns its upstream logging; this adapter does not reconfigure it.
 
         # Hikari invokes the Playwright CLI by name when it installs its browser.
         # AstrBot's bundled interpreter directory is not necessarily on PATH.
+        # This changes PATH only for the current AstrBot process and its children;
+        # it does not edit shell profiles or persistent system-wide settings.
         python_bin = os.path.dirname(sys.executable)
         if python_bin not in os.environ.get("PATH", "").split(os.pathsep):
             os.environ["PATH"] = python_bin + os.pathsep + os.environ.get("PATH", "")

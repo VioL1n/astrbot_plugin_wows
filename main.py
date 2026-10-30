@@ -9,11 +9,6 @@ import asyncio
 import time
 from typing import Any
 
-from . import log_patch
-
-# Hikari logs while importing, so its records need the patch first.
-log_patch.install()
-
 # Imported eagerly so a missing dependency fails plugin loading, which is what
 # makes AstrBot install requirements.txt.
 import hikari_core  # noqa: E402, F401
@@ -579,4 +574,3 @@ class WowsPlugin(Star):
             self._warmup_task.cancel()
         if self._engine is not None:
             await self._engine.close()
-        log_patch.uninstall()
